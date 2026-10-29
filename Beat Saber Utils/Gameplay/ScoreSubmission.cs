@@ -1,4 +1,4 @@
-﻿using BS_Utils.Utilities;
+using BS_Utils.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +7,11 @@ using IPA.Loader;
 using Logger = BS_Utils.Utilities.Logger;
 using LogLevel = IPA.Logging.Logger.Level;
 //using UnityEngine;
+
+using ScenesTransitionSetupDataSO = global::ScenesTransitionSetupData;
+using LevelScenesTransitionSetupDataSO = global::LevelScenesTransitionSetupData;
+using StandardLevelScenesTransitionSetupDataSO = global::StandardLevelScenesTransitionSetupData;
+using MultiplayerLevelScenesTransitionSetupDataSO = global::MultiplayerLevelScenesTransitionSetupData;
 
 namespace BS_Utils.Gameplay
 {

@@ -1,5 +1,7 @@
-﻿using System.Linq;
+using System.Linq;
 using UnityEngine;
+
+using BeatmapCharacteristicSO = global::BeatmapCharacteristic;
 
 namespace BS_Utils.Gameplay
 {

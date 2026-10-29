@@ -1,5 +1,9 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 //using UnityEngine;
+
+using StandardLevelScenesTransitionSetupDataSO = global::StandardLevelScenesTransitionSetupData;
+using MultiplayerLevelScenesTransitionSetupDataSO = global::MultiplayerLevelScenesTransitionSetupData;
+using MissionLevelScenesTransitionSetupDataSO = global::MissionLevelScenesTransitionSetupData;
 
 namespace BS_Utils.Gameplay.HarmonyPatches
 {

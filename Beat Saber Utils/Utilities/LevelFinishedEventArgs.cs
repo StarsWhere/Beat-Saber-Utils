@@ -1,6 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+
+using ScenesTransitionSetupDataSO = global::ScenesTransitionSetupData;
+using StandardLevelScenesTransitionSetupDataSO = global::StandardLevelScenesTransitionSetupData;
+using MultiplayerLevelScenesTransitionSetupDataSO = global::MultiplayerLevelScenesTransitionSetupData;
+using MissionLevelScenesTransitionSetupDataSO = global::MissionLevelScenesTransitionSetupData;
+using TutorialScenesTransitionSetupDataSO = global::TutorialScenesTransitionSetupData;
 
 namespace BS_Utils.Utilities
 {

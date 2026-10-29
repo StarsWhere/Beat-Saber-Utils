@@ -1,8 +1,14 @@
-﻿using System;
+using System;
 using BS_Utils.Utilities;
 using HarmonyLib;
 //using UnityEngine;
 using Logger = BS_Utils.Utilities.Logger;
+
+using LevelScenesTransitionSetupDataSO = global::LevelScenesTransitionSetupData;
+using StandardLevelScenesTransitionSetupDataSO = global::StandardLevelScenesTransitionSetupData;
+using MultiplayerLevelScenesTransitionSetupDataSO = global::MultiplayerLevelScenesTransitionSetupData;
+using MissionLevelScenesTransitionSetupDataSO = global::MissionLevelScenesTransitionSetupData;
+using TutorialScenesTransitionSetupDataSO = global::TutorialScenesTransitionSetupData;
 
 namespace BS_Utils.Gameplay.HarmonyPatches
 {  

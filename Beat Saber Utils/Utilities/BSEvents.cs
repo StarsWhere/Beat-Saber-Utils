@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +6,13 @@ using Zenject;
 using System.Collections.Generic;
 using BS_Utils.Utilities.Events;
 using static GameScenesManager;
+
+using ScenesTransitionSetupDataSO = global::ScenesTransitionSetupData;
+using StandardLevelScenesTransitionSetupDataSO = global::StandardLevelScenesTransitionSetupData;
+using MultiplayerLevelScenesTransitionSetupDataSO = global::MultiplayerLevelScenesTransitionSetupData;
+using MissionLevelScenesTransitionSetupDataSO = global::MissionLevelScenesTransitionSetupData;
+using TutorialScenesTransitionSetupDataSO = global::TutorialScenesTransitionSetupData;
+using BeatmapCharacteristicSO = global::BeatmapCharacteristic;
 
 namespace BS_Utils.Utilities
 {
@@ -239,8 +246,8 @@ namespace BS_Utils.Utilities
             var beatmapCallbacksController = diContainer.TryResolve<BeatmapCallbacksController>();
             beatmapCallbacksController?.AddBeatmapCallback(new BeatmapDataCallback<BeatmapEventData>(songEvent => InvokeAll(beatmapEvent, songEvent)));
 
-            var transitionSetup = Resources.FindObjectsOfTypeAll<StandardLevelScenesTransitionSetupDataSO>().FirstOrDefault();
-            if (transitionSetup)
+            var transitionSetup = transitionSetupData as StandardLevelScenesTransitionSetupDataSO;
+            if (transitionSetup != null)
             {
                 transitionSetup.didFinishEvent -= OnTransitionSetupOnDidFinishEvent;
                 transitionSetup.didFinishEvent += OnTransitionSetupOnDidFinishEvent;
