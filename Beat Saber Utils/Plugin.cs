@@ -48,7 +48,7 @@ namespace BS_Utils
 
         private void PluginManager_OnPluginsStateChanged(Task task)
         {
-            var transitionHelper = Resources.FindObjectsOfTypeAll<MenuTransitionsHelper>().FirstOrDefault();
+            var transitionHelper = Resources.FindObjectsOfTypeAll<MainFlowCoordinator>().FirstOrDefault()?._menuTransitionsHelper;
             var fadeOutHelper = Resources.FindObjectsOfTypeAll<FadeInOutController>().FirstOrDefault();
             fadeOutHelper?.FadeOut();
             task.ContinueWith(t => transitionHelper?.RestartGame(), UnityMainThreadTaskScheduler.Default);
