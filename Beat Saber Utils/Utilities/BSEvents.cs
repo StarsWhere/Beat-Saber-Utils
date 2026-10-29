@@ -12,7 +12,6 @@ using StandardLevelScenesTransitionSetupDataSO = global::StandardLevelScenesTran
 using MultiplayerLevelScenesTransitionSetupDataSO = global::MultiplayerLevelScenesTransitionSetupData;
 using MissionLevelScenesTransitionSetupDataSO = global::MissionLevelScenesTransitionSetupData;
 using TutorialScenesTransitionSetupDataSO = global::TutorialScenesTransitionSetupData;
-using BeatmapCharacteristicSO = global::BeatmapCharacteristic;
 
 namespace BS_Utils.Utilities
 {
@@ -39,7 +38,7 @@ namespace BS_Utils.Utilities
 
         // Menu Events
         public static event Action<StandardLevelDetailViewController> difficultySelected;
-        public static event Action<BeatmapCharacteristicSegmentedControlController, BeatmapCharacteristicSO> characteristicSelected;
+        public static event Action<BeatmapCharacteristicSegmentedControlController, BeatmapCharacteristic> characteristicSelected;
         public static event Action<LevelSelectionNavigationController, BeatmapLevelPack> levelPackSelected;
         public static event Action<LevelCollectionViewController, BeatmapLevel> levelSelected;
 
@@ -155,7 +154,7 @@ namespace BS_Utils.Utilities
             levelDetailViewController.didChangeDifficultyBeatmapEvent += delegate (StandardLevelDetailViewController vc) { InvokeAll(difficultySelected, vc); };
 
             var characteristicSelect = Resources.FindObjectsOfTypeAll<BeatmapCharacteristicSegmentedControlController>().FirstOrDefault();
-            characteristicSelect.didSelectBeatmapCharacteristicEvent += delegate (BeatmapCharacteristicSegmentedControlController controller, BeatmapCharacteristicSO characteristic) { InvokeAll(characteristicSelected, controller, characteristic); };
+            characteristicSelect.didSelectBeatmapCharacteristicEvent += delegate (BeatmapCharacteristicSegmentedControlController controller, BeatmapCharacteristic characteristic) { InvokeAll(characteristicSelected, controller, characteristic); };
 
             var packSelectViewController = Resources.FindObjectsOfTypeAll<LevelSelectionNavigationController>().FirstOrDefault();
             packSelectViewController.didSelectLevelPackEvent += delegate (LevelSelectionNavigationController controller, BeatmapLevelPack pack) { InvokeAll(levelPackSelected, controller, pack); };

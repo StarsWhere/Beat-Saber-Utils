@@ -1,14 +1,13 @@
 using System.Linq;
 using UnityEngine;
 
-using BeatmapCharacteristicSO = global::BeatmapCharacteristic;
 
 namespace BS_Utils.Gameplay
 {
     public class Gamemode
     {
       //  internal static BeatmapCharacteristicSegmentedControlController CharacteristicSelectionViewController;
-      //  public static BeatmapCharacteristicSO SelectedCharacteristic { get; internal set; }
+      //  public static BeatmapCharacteristic SelectedCharacteristic { get; internal set; }
         internal static SoloFreePlayFlowCoordinator SoloFreePlayFlowCoordinator;
         internal static PartyFreePlayFlowCoordinator PartyFreePlayFlowCoordinator;
         internal static MainMenuViewController MainMenuViewController;
@@ -50,7 +49,7 @@ namespace BS_Utils.Gameplay
                 IsPartyActive = false;
         }
         /*
-        internal static void CharacteristicSelectionViewController_didSelectBeatmapCharacteristicEvent(BeatmapCharacteristicSegmentedControlController arg1, BeatmapCharacteristicSO arg2)
+        internal static void CharacteristicSelectionViewController_didSelectBeatmapCharacteristicEvent(BeatmapCharacteristicSegmentedControlController arg1, BeatmapCharacteristic arg2)
         {
         //    Utilities.Logger.Log("Prev: " + GameMode + "    New: " + arg2.serializedName);
             GameMode = arg2.serializedName;
