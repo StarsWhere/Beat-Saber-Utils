@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using HarmonyLib;
 using HMUI;
 using TMPro;
@@ -9,16 +9,16 @@ namespace BS_Utils.Gameplay.HarmonyPatches
     [HarmonyPatch(typeof(ResultsViewController), nameof(ResultsViewController.SetDataToUI))]
     internal class ResultsViewControllerSetDataToUI
     {
-        private static void Postfix(ref TextMeshProUGUI ____rankText, ref GameObject ____clearedBannerGo, ref GameObject ____failedBannerGo)
+        private static void Postfix(ResultsViewController __instance)
         {
-            ____rankText.overflowMode = TextOverflowModes.Overflow;
-            ____rankText.richText = true;
+            __instance._rankText.overflowMode = TextOverflowModes.Overflow;
+            __instance._rankText.richText = true;
 
-            GameObject bannerGo = ____clearedBannerGo.activeInHierarchy ? ____clearedBannerGo : ____failedBannerGo;
+            GameObject bannerGo = __instance._clearedBannerGo.activeInHierarchy ? __instance._clearedBannerGo : __instance._failedBannerGo;
 
             GameObject bgGo = bannerGo.transform.Find("BG").gameObject;
             CurvedTextMeshPro tmp = bannerGo.GetComponentInChildren<CurvedTextMeshPro>();
-            if (bannerGo == ____failedBannerGo)
+            if (bannerGo == __instance._failedBannerGo)
                 tmp.color = Color.red;
             if (bgGo != null)
                 bgGo.SetActive(true);
